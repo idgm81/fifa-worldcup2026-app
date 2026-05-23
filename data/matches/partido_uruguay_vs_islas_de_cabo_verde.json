@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Uruguay vs Islas de Cabo Verde",
+  "group": "Grupo H",
+  "startDate": "2026-06-22T00:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Uruguay",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/URU"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Islas de Cabo Verde",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/CPV"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Miami",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/URU",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/CPV"
+  ]
+}

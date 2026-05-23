@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Túnez vs Países Bajos",
+  "group": "Grupo F",
+  "startDate": "2026-06-26T01:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Túnez",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/TUN"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Países Bajos",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/NED"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Kansas City",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/TUN",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/NED"
+  ]
+}

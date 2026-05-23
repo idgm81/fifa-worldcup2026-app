@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "2E vs 2I",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-06-30T19:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "2E"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "2I"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Dallas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

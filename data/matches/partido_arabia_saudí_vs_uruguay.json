@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Arabia Saudí vs Uruguay",
+  "group": "Grupo H",
+  "startDate": "2026-06-16T00:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Arabia Saudí",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/KSA"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Uruguay",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/URU"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Miami",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/KSA",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/URU"
+  ]
+}

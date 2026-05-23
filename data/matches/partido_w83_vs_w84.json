@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W83 vs W84",
+  "group": "Octavos de final",
+  "startDate": "2026-07-06T21:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W83"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W84"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Dallas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

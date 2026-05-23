@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "2K vs 2L",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-07-03T01:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "2K"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "2L"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio de Toronto",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

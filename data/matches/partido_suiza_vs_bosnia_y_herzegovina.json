@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Suiza vs Bosnia y Herzegovina",
+  "group": "Grupo B",
+  "startDate": "2026-06-18T21:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Suiza",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/SUI"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Bosnia y Herzegovina",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/BIH"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Los Angeles",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Ángeles"
+    }
+  },
+  "broadcasters": "Ver Suiza vs Bosnia y Herzegovina en vivo. Canales: 2 disponibles.",
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/SUI",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/BIH"
+  ]
+}

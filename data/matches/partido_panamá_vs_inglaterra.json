@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Panamá vs Inglaterra",
+  "group": "Grupo L",
+  "startDate": "2026-06-27T23:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Panamá",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/PAN"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Inglaterra",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/ENG"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Nueva York/Nueva Jersey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nueva York"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/PAN",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/ENG"
+  ]
+}

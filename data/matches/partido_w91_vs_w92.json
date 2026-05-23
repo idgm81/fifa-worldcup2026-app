@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W91 vs W92",
+  "group": "Cuartos de final",
+  "startDate": "2026-07-11T23:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W91"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W92"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Miami",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

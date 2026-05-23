@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Nueva Zelanda vs Egipto",
+  "group": "Grupo G",
+  "startDate": "2026-06-22T03:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Nueva Zelanda",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/NZL"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Egipto",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/EGY"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio BC Place Vancouver",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/NZL",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/EGY"
+  ]
+}

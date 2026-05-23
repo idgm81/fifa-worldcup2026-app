@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Francia vs Irak",
+  "group": "Grupo I",
+  "startDate": "2026-06-22T23:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Francia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/FRA"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Irak",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/IRQ"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Filadelfia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Filadelfia"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/FRA",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/IRQ"
+  ]
+}

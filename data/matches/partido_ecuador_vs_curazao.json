@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Ecuador vs Curazao",
+  "group": "Grupo E",
+  "startDate": "2026-06-21T02:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Ecuador",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/ECU"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Curazao",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/CUW"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Kansas City",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/ECU",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/CUW"
+  ]
+}

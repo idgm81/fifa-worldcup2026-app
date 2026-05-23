@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W73 vs W75",
+  "group": "Octavos de final",
+  "startDate": "2026-07-04T19:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W73"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W75"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Houston",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Houston"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

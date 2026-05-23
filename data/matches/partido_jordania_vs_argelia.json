@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Jordania vs Argelia",
+  "group": "Grupo J",
+  "startDate": "2026-06-23T05:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Jordania",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/JOR"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Argelia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/ALG"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio de la Bahía de San Francisco",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Área de la Bahía de San Francisco"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/JOR",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/ALG"
+  ]
+}

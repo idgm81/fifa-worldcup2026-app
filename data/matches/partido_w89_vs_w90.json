@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W89 vs W90",
+  "group": "Cuartos de final",
+  "startDate": "2026-07-09T22:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W89"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W90"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Boston",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boston"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

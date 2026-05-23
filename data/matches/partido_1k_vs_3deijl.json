@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "1K vs 3DEIJL",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-07-04T03:30:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "1K"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "3DEIJL"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Kansas City",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

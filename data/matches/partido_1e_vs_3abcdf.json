@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "1E vs 3ABCDF",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-06-29T22:30:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "1E"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "3ABCDF"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Boston",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boston"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

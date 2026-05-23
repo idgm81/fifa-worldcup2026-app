@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Australia vs Turquía",
+  "group": "Grupo D",
+  "startDate": "2026-06-14T06:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Australia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/AUS"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Turquía",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/TUR"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio BC Place Vancouver",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/AUS",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/TUR"
+  ]
+}

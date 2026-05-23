@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W76 vs W78",
+  "group": "Octavos de final",
+  "startDate": "2026-07-05T22:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W76"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W78"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Nueva York/Nueva Jersey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nueva York"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

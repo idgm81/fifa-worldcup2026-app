@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "1I vs 3CDFGH",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-06-30T23:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "1I"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "3CDFGH"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Nueva York/Nueva Jersey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nueva York"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

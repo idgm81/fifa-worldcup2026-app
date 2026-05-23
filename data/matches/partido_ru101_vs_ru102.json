@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "RU101 vs RU102",
+  "group": "Partido por el tercer puesto",
+  "startDate": "2026-06-18T23:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "RU101"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "RU102"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Miami",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

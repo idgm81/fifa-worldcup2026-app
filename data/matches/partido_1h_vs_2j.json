@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "1H vs 2J",
+  "group": "Dieciseisavos de final",
+  "startDate": "2026-07-02T21:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "1H"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "2J"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Los Angeles",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Ángeles"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

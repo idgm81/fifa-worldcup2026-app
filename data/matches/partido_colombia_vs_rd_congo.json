@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Colombia vs RD Congo",
+  "group": "Grupo K",
+  "startDate": "2026-06-24T04:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Colombia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/COL"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "RD Congo",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/COD"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Guadalajara",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Guadalajara"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/COL",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/COD"
+  ]
+}

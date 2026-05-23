@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W101 vs W102",
+  "group": "Final",
+  "startDate": "2026-07-19T21:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W101"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W102"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Nueva York/Nueva Jersey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nueva York"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

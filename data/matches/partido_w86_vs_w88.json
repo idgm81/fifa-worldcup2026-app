@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "W86 vs W88",
+  "group": "Octavos de final",
+  "startDate": "2026-07-07T18:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "W86"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "W88"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Atlanta",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    null,
+    null
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Sudáfrica vs República de Corea",
+  "group": "Grupo A",
+  "startDate": "2026-06-25T03:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Sudáfrica",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/RSA"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "República de Corea",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/KOR"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Monterrey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Monterrey"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/RSA",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/KOR"
+  ]
+}

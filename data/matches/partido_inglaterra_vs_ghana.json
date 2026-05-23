@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Inglaterra vs Ghana",
+  "group": "Grupo L",
+  "startDate": "2026-06-23T22:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Inglaterra",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/ENG"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Ghana",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/GHA"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Boston",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boston"
+    }
+  },
+  "broadcasters": "Ver Inglaterra vs Ghana en vivo. Canales: 2 disponibles.",
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/ENG",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/GHA"
+  ]
+}

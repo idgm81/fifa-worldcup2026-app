@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Japón vs Suecia",
+  "group": "Grupo F",
+  "startDate": "2026-06-26T01:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Japón",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/JPN"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Suecia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/SWE"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Dallas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/JPN",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/SWE"
+  ]
+}

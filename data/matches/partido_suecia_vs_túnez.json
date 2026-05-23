@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Suecia vs Túnez",
+  "group": "Grupo F",
+  "startDate": "2026-06-15T04:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Suecia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/SWE"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Túnez",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/TUN"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Monterrey",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Monterrey"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/SWE",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/TUN"
+  ]
+}

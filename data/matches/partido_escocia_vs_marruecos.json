@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Escocia vs Marruecos",
+  "group": "Grupo C",
+  "startDate": "2026-06-20T00:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Escocia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/SCO"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "Marruecos",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/MAR"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Boston",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boston"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/SCO",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/MAR"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Chequia vs México",
+  "group": "Grupo A",
+  "startDate": "2026-06-25T03:00:00",
+  "homeTeam": {
+    "@type": "SportsTeam",
+    "name": "Chequia",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/CZE"
+  },
+  "awayTeam": {
+    "@type": "SportsTeam",
+    "name": "México",
+    "image": "https://api.fifa.com/api/v3/picture/flags-sq-4/MEX"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Estadio Ciudad de México",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad de México"
+    }
+  },
+  "broadcasters": [
+    "950"
+  ],
+  "image": [
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/CZE",
+    "https://api.fifa.com/api/v3/picture/flags-sq-4/MEX"
+  ]
+}
