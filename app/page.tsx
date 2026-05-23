@@ -1,13 +1,46 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import CardMatch from '@/components/CardMatch';
+import AdUnit from '@/components/AdUnit';
 import fs from 'fs';
 import path from 'path';
 
 export const metadata = {
   title: 'Copa Mundial FIFA 2026 | Resultados, Partidos y Estadísticas en Vivo',
   description: 'Sigue todos los resultados, horarios y clasificaciones de la Copa Mundial FIFA 2026. Actualizaciones al instante y las mejores ofertas en camisetas de tus selecciones favoritas.',
-  keywords: 'mundial 2026, resultados fifa 2026, partidos mundial, comprar camisetas mundial, mexico 2026, usa 2026, canada 2026'
+  keywords: 'mundial 2026, resultados fifa 2026, partidos mundial, comprar camisetas mundial, mexico 2026, usa 2026, canada 2026',
+
+  // Configuración de OpenGraph
+  openGraph: {
+    title: "Copa Mundial FIFA 2026 | Calendario y Resultados",
+    description: 'Sigue todos los resultados, horarios y clasificaciones de la Copa Mundial FIFA 2026. Actualizaciones al instante y las mejores ofertas en camisetas de tus selecciones favoritas.',
+    url: 'https://tu-web-en-vercel.vercel.app',
+    siteName: 'Calendario y Resultados Copa Mundial FIFA 2026',
+    images: [
+      {
+        url: '/hero-bg.png',
+        width: 1200,
+        height: 630,
+        alt: 'Estadios del Mundial 2026',
+      },
+      {
+        url: '/copa-mundo.png',
+        width: 400,
+        height: 400,
+        alt: 'Trofeo FIFA World Cup',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
+
+  // Configuración específica para Twitter (X)
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Calendario y Resultados Copa Mundial FIFA 2026',
+    description: 'Sigue todos los resultados, horarios y clasificaciones de la Copa Mundial FIFA 2026. Actualizaciones al instante y las mejores ofertas en camisetas de tus selecciones favoritas.',
+    images: ['/hero-bg.png'], // Imagen que se verá en grande al tuitear
+  },
 };
 
 async function getMatches() {
@@ -55,7 +88,7 @@ export default async function Home() {
       <header className="bg-blue-900 text-white p-4 shadow-md sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <img 
-            src="/cup.jpeg" 
+            src="/copa-mundo.png" 
             alt="FIFA World Cup Trophy" 
             className="w-10 h-10 object-contain"
           />
@@ -81,7 +114,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]"></div>
         <div className="relative z-20 text-center text-white p-6 max-w-3xl">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-4 uppercase drop-shadow-lg">
-            Vive la Copa Mundial FIFA 2026
+            No te pierdas nada de la Copa Mundial FIFA 2026
           </h2>
           <p className="text-xl md:text-2xl mb-8 font-light">
             Resultados al minuto, clasificacion y estadísticas
@@ -122,6 +155,8 @@ export default async function Home() {
             </a>
           </div>
         </div>
+
+        <AdUnit slot="6930181525" />
 
         {/* Partidos Section */}
         <section id="partidos" className="mb-12">
