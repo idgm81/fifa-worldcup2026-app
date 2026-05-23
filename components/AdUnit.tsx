@@ -2,7 +2,11 @@
 'use client';
 import { useEffect } from 'react';
 
-export default function AdUnit({ slot }) {
+interface AdUnitProps {
+  slot: string; // Esto elimina el error de tipo 'any'
+}
+
+export default function AdUnit({ slot }: AdUnitProps) {  
   useEffect(() => {
     try {
       // @ts-ignore
