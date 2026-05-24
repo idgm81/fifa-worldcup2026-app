@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/update-standings?key=4f8a2b9e1c7d3f6a0b5e8d2c9f1a7b4e3d6c9b8a5f2e0d1c7b4a9f3e6d2c1b0",
-      "schedule": "0 */2 * * *" 
+      "schedule": "*/15 * * * *" 
     }
   ]
 }
