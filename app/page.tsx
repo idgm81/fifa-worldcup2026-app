@@ -1,8 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import CardMatch from '@/components/CardMatch';
 import AdUnit from '@/components/AdUnit';
-import fs from 'fs';
-import path from 'path';
 
 export const metadata = {
   title: 'Copa Mundial FIFA 2026 | Resultados, Partidos y Estadísticas en Vivo',
@@ -68,24 +66,6 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-      
-      {/* Header / Nav */}
-      <header className="bg-blue-900 text-white p-4 shadow-md sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <img 
-            src="/copa-mundo.png" 
-            alt="FIFA World Cup Trophy" 
-            className="w-10 h-10 object-contain"
-          />
-          <h1 className="text-2xl font-bold tracking-tight">Copa Mundial FIFA 2026</h1>
-          <nav className="hidden md:flex space-x-6 font-medium">
-            <a href="/matches" className="hover:text-blue-300 transition">Partidos</a>
-            <a href="/groups" className="hover:text-blue-300 transition">Grupos</a>
-            <a href="#tienda" className="hover:text-blue-300 transition text-yellow-400">Tienda</a>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section 
         className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden"
