@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import { createClient } from '@supabase/supabase-js';
 import CardMatch from '@/components/CardMatch';
 import AdUnit from '@/components/AdUnit';
 import fs from 'fs';
@@ -12,9 +11,9 @@ export const metadata = {
 
   // Configuración de OpenGraph
   openGraph: {
-    title: "Copa Mundial FIFA 2026 | Calendario y Resultados",
+    title: 'Copa Mundial FIFA 2026 | Calendario y Resultados',
     description: 'Sigue todos los resultados, horarios y clasificaciones de la Copa Mundial FIFA 2026. Actualizaciones al instante y las mejores ofertas en camisetas de tus selecciones favoritas.',
-    url: 'https://tu-web-en-vercel.vercel.app',
+    url: 'https://fifa-worldcup2026-app.vercel.app/',
     siteName: 'Calendario y Resultados Copa Mundial FIFA 2026',
     images: [
       {
@@ -43,43 +42,29 @@ export const metadata = {
   },
 };
 
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
 async function getMatches() {
-  // path.join(process.cwd(), 'data', 'matches') apunta a la raíz del proyecto
-  const matchesDirectory = path.join(process.cwd(), 'data', 'matches');
+  const now = new Date().toISOString();
+  
+  // 1. Buscamos partidos EN VIVO o de HOY
+  // 2. Si no hay, traemos solo los 3 siguientes
 
-  try {
-    // 1. Verificar si la carpeta existe
-    if (!fs.existsSync(matchesDirectory)) {
-      console.error("❌ Error: La carpeta /data/matches no existe en la raíz.");
-      return [];
-    }
+  const { data: matches, error } = await supabase
+      .from('matches')
+      .select('*')
+      .or(`status.eq.live, scheduled_at.gte.${now}`)
+      .order('scheduled_at', { ascending: true })
+      .limit(3);
 
-    // 2. Leer los nombres de los archivos
-    const filenames = fs.readdirSync(matchesDirectory);
-
-    // 3. Procesar cada archivo
-    const matches = filenames
-      .filter((filename) => filename.endsWith('.json')) // Evitar archivos basura como .DS_Store
-      .map((filename) => {
-        const filePath = path.join(matchesDirectory, filename);
-        const fileContents = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(fileContents);
-      });
-
-    // 4. Ordenar cronológicamente (usando el startDate del Schema)
-    return matches.sort((a, b) => 
-      new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-    );
-
-  } catch (error) {
-    console.error("❌ Error leyendo los archivos JSON:", error);
-    return [];
-  }
+  return matches || [];
 }
 
-export default async function Home() {
-  const allMatches = await getMatches();
-  const nextMatches = allMatches.slice(0, 3);
+export default async function HomePage() {
+  const matches = await getMatches();
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
@@ -94,8 +79,8 @@ export default async function Home() {
           />
           <h1 className="text-2xl font-bold tracking-tight">Copa Mundial FIFA 2026</h1>
           <nav className="hidden md:flex space-x-6 font-medium">
-            <a href="#partidos" className="hover:text-blue-300 transition">Partidos</a>
-            <a href="#grupos" className="hover:text-blue-300 transition">Grupos</a>
+            <a href="/matches" className="hover:text-blue-300 transition">Partidos</a>
+            <a href="/groups" className="hover:text-blue-300 transition">Grupos</a>
             <a href="#tienda" className="hover:text-blue-300 transition text-yellow-400">Tienda</a>
           </nav>
         </div>
@@ -162,8 +147,8 @@ export default async function Home() {
         <section id="partidos" className="mb-12">
           <h2 className="text-3xl font-bold border-b-4 border-blue-900 pb-2 inline-block mb-8">Próximos Partidos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {nextMatches.map((partido, index) => (
-              <CardMatch key={index} partido={partido} />
+            {matches.map((game, index) => (
+              <CardMatch key={index} game={game} />
             ))}
           </div>
         </section>
