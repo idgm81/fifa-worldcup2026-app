@@ -11,6 +11,7 @@ export interface MatchEvent {
 export interface MatchGame {
     game: {
         id: string;
+        api_id: string;
         name: string;
         group: string;
         status: 'scheduled' | 'live' | 'finished';
@@ -18,6 +19,7 @@ export interface MatchGame {
         home_team: { name: string; image: string };
         away_team: { name: string; image: string };
         score: { home: number; away: number };
+        lineups: { home: { startXI: [], coach: string, subs: [] }, away: { startXI: [], coach: string, subs: [] } },
         stats: {
             possession: { home: number; away: number };
             shots: { home: number; away: number };
@@ -35,4 +37,3 @@ export interface MatchGame {
         broadcasters: []
     }
 }
-
