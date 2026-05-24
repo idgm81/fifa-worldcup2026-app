@@ -12,12 +12,14 @@ export default function AdUnit({ slot }: AdUnitProps) {
       // @ts-ignore
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
-      console.error("AdSense error:", err);
+      console.error("AdSense error", err);
     }
   }, []);
 
   return (
-    <div className="my-8 flex justify-center overflow-hidden min-h-[90px]">
+    <div
+      style={{ display: 'block', minWidth: '300px' }}
+      className="my-8 flex justify-center overflow-hidden min-h-[90px]">
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}

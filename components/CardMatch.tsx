@@ -2,6 +2,7 @@
 
 import { MatchGame } from "@/types/match";
 import FechaLocal from "@/components/FechaLocal";
+import TeamImage from "@/components/TeamImage";
 import Link from "next/link";
 
 export default function CardMatch({ game }: MatchGame) {
@@ -30,11 +31,7 @@ export default function CardMatch({ game }: MatchGame) {
         <div className="flex justify-between items-center gap-4">
           {/* Equipo Local */}
           <div className="flex flex-col items-center flex-1">
-            <img 
-              src={home_team.image} 
-              alt={home_team.name} 
-              className="w-16 h-16 object-contain mb-3 transform group-hover:scale-110 transition-transform"
-            />
+            <TeamImage src={game.home_team.image} name={game.home_team.name} className="w-16 h-16" />
             <span className="text-sm font-bold text-center h-10 flex items-center">
               {home_team.name}
             </span>
@@ -50,11 +47,7 @@ export default function CardMatch({ game }: MatchGame) {
 
           {/* Equipo Visitante */}
           <div className="flex flex-col items-center flex-1">
-            <img 
-              src={away_team.image} 
-              alt={away_team.name} 
-              className="w-16 h-16 object-contain mb-3 transform group-hover:scale-110 transition-transform"
-            />
+            <TeamImage src={game.away_team.image} name={game.away_team.name} className="w-16 h-16" />
             <span className="text-sm font-bold text-center h-10 flex items-center">
               {away_team.name}
             </span>
