@@ -26,8 +26,8 @@ export interface MatchGame {
             fouls: { home: number; away: number };
         };
         events: MatchEvent[];
-        scheduled_at: Date,
-        updated_at: Date,
+        scheduled_at: string,
+        updated_at: string,
         location: {
             name: string;
             city: string; 

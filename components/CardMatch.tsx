@@ -1,24 +1,15 @@
 // components/CardMatch.tsx
 
 import { MatchGame } from "@/types/match";
+import FechaLocal from "@/components/FechaLocal";
 import Link from "next/link";
 
 export default function CardMatch({ game }: MatchGame) {
   // Extraemos datos del objeto partido (basado en tu script)
   const { group, scheduled_at, location, home_team, away_team, broadcasters } = game;
-  // Formatear la fecha para mostrarla bonita
-  const fechaFormateada = new Date(scheduled_at).toLocaleDateString('es-ES', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-  });
-  const horaFormateada = new Date(scheduled_at).toLocaleTimeString('es-ES', {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden group">
+    <div className="relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 overflow-hidden group">
       {game.status === 'live' && (
         <div className="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl animate-pulse">
           EN VIVO
@@ -31,7 +22,7 @@ export default function CardMatch({ game }: MatchGame) {
           {group}
         </span>
         <span className="text-xs text-gray-500 font-medium">
-          {fechaFormateada}
+          <FechaLocal date={scheduled_at} showDate={true} showTime={false} />
         </span>
       </div>
 
@@ -53,7 +44,7 @@ export default function CardMatch({ game }: MatchGame) {
           <div className="flex flex-col items-center">
             <span className="text-2xl font-black text-gray-300 italic">VS</span>
             <div className="mt-2 bg-blue-900 text-white px-3 py-1 rounded-full text-sm font-bold">
-              {horaFormateada}
+              <FechaLocal date={scheduled_at} showDate={false} showTime={true} />
             </div>
           </div>
 
@@ -70,7 +61,7 @@ export default function CardMatch({ game }: MatchGame) {
           </div>
         </div>
 
-        {/* Información Extra */}
+        {/* Estadio y Ciudad */}
         <div className="mt-6 space-y-2">
           <div className="flex items-center text-xs text-gray-600">
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
