@@ -79,10 +79,10 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]"></div>
         <div className="relative z-20 text-center text-white p-6 max-w-3xl">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-4 uppercase drop-shadow-lg">
-            No te pierdas nada de la Copa Mundial FIFA 2026
+            Vive la Copa Mundial FIFA 2026
           </h2>
           <p className="text-xl md:text-2xl mb-8 font-light">
-            Resultados al minuto, clasificacion y estadísticas
+            Resultados y clasificacion actualizados en vivo
           </p>
           <a href="#partidos" className="bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition transform hover:scale-105">
             Ver Partidos de Hoy
@@ -132,12 +132,7 @@ export default async function HomePage() {
             ))}
           </div>
         </section>
-
       </main>
-
-      <footer className="bg-gray-900 text-gray-400 text-center py-8">
-        <p>&copy; 2026</p>
-      </footer>
     </div>
   );
 }

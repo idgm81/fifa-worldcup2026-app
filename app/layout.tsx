@@ -61,8 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        <footer className="bg-white border-t border-gray-100 py-10 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
-          Copa del Mundo FIFA 2026
+        <footer className="bg-gray-900 border-t border-gray-100 py-10 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+          &copy; 2026
         </footer>
       </body>
     </html>
