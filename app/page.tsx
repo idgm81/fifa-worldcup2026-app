@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import CardMatch from '@/components/CardMatch';
-import AdUnit from '@/components/AdUnit';
+import AdSenseBanner from '@/components/AdSenseBanner';
 
 export const metadata = {
   title: 'Copa Mundial FIFA 2026 | Resultados, Partidos y Estadísticas en Vivo',
@@ -121,7 +121,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <AdUnit slot="6930181525" />
+        <AdSenseBanner slot="6930181525" />
 
         {/* Partidos Section */}
         <section id="partidos" className="mb-12">
