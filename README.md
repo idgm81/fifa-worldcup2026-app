@@ -1,4 +1,4 @@
-# FIFA World Cup 2026 App
+# FIFA World Cup 2026 Web
 
 Next.js 16 application for following the 2026 FIFA World Cup with a homepage for upcoming/live matches, a full calendar, group standings, and a live match detail view backed by Supabase.
 
