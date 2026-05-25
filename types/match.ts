@@ -31,8 +31,9 @@ export interface MatchGame {
         scheduled_at: string,
         updated_at: string,
         location: {
-            name: string;
             city: string; 
+            name: string;
+            stadium_capacity: number;
         },
         broadcasters: []
     }

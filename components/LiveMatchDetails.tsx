@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import useSWR from 'swr';
 import { MatchGame } from '@/types/match';
-import { IoFootball, IoAlertCircle, IoTimeOutline, IoVolumeHighOutline, IoVolumeMuteOutline, IoPeopleOutline } from "react-icons/io5";
+import { IoFootball, IoAlertCircle, IoTimeOutline, IoVolumeHighOutline, IoVolumeMuteOutline, IoPeopleOutline, IoLocationOutline } from "react-icons/io5";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -30,43 +30,89 @@ export default function LiveMatchDetailsPage({ matchId }: { matchId: string }) {
   if (error) return <div className="p-10 text-center text-red-500">Error de conexión con el estadio.</div>;
   if (!match) return <div className="p-10 text-center animate-pulse text-blue-600 font-bold">CONECTANDO CON LA SEÑAL EN VIVO...</div>;
 
+  const statusStyles = {
+    live: {
+      container: "bg-red-600/10 border-red-500/50 text-red-500",
+      dot: "bg-red-500 animate-ping",
+      label: `EN VIVO ${match.game.minute}'`
+    },
+    scheduled: {
+      container: "bg-blue-600/10 border-blue-500/50 text-blue-400",
+      dot: "bg-blue-400",
+      label: "Programado"
+    },
+    finished: {
+      container: "bg-gray-800/50 border-gray-700 text-gray-400",
+      dot: "bg-gray-600",
+      label: "Finalizado"
+    }
+  };
+  const currentStatus = statusStyles[match.game.status as keyof typeof statusStyles] || statusStyles.scheduled;
+
   return (
     <div className="max-w-6xl mx-auto p-4 space-y-8 animate-in fade-in duration-500">
-      
       {/* Marcador Principal */}
-      <div className="relative bg-gradient-to-br from-blue-900 to-black text-white p-8 rounded-[2rem] shadow-2xl overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/patterns/stadium.svg')] bg-cover"></div>
-        
-        <div className="relative z-10 flex justify-between items-center">
+      <div className="relative bg-gradient-to-br from-blue-900 via-slate-900 to-black text-white p-8 rounded-[2rem] shadow-2xl overflow-hidden border border-white/5">
+        <div 
+          className="absolute inset-0 opacity-[0.15] pointer-events-none" 
+          style={{ 
+            backgroundImage: "url('/patterns/stadium.svg')", 
+            backgroundSize: 'contain',    // O prueba con '800px' si quieres que sea más grande que el contenedor
+            backgroundRepeat: 'no-repeat', // Evita que se vea troceado
+            backgroundPosition: 'center', // Lo clava en el centro del marcador
+          }}
+        />
+
+      <div className="relative z-10">
+        {/* SEDE Y CAPACIDAD (Añadido aquí) */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
+            <IoLocationOutline className="text-blue-400" size={14} />
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-blue-100/70">
+              {match.game.location?.name || 'Sede por confirmar'} 
+              {match.game.location?.stadium_capacity && (
+                <span className="ml-2 text-blue-400/90 italic">
+                  — {match.game.location?.stadium_capacity.toLocaleString()} ESP.
+                </span>
+              )}
+            </span>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center">
           <div className="text-center flex-1">
-            <img src={match.game.home_team.image} className="w-24 h-24 mx-auto drop-shadow-lg" alt="Local" />
+            <img src={match.game.home_team.image} className="w-24 h-20 mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" alt="Local" />
             <h2 className="text-2xl font-black mt-4 uppercase tracking-tighter">{match.game.home_team.name}</h2>
           </div>
           
           <div className="flex-1 text-center">
-            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/50 px-4 py-1 rounded-full mb-4">
-               <span className="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
-               <span className="text-xs font-black text-red-500 uppercase tracking-widest">{match.game.status === 'live' ? `EN VIVO ${match.game.minute}'` : 'FINALIZADO'}</span>
+            <div className={`inline-flex items-center gap-2 border px-4 py-1 rounded-full mb-4 transition-colors duration-500 ${currentStatus.container}`}>
+              <span className={`w-2 h-2 rounded-full ${currentStatus.dot}`}></span>
+              <span className="text-xs font-black uppercase tracking-widest">
+                {currentStatus.label}
+              </span>
             </div>
-            <div className="text-8xl font-black tabular-nums tracking-tighter">{match.game.score.home} - {match.game.score.away}</div>
-            <button onClick={() => setIsMuted(!isMuted)} className="mt-4 text-[10px] uppercase tracking-[0.2em] font-bold opacity-50 hover:opacity-100 transition-opacity flex items-center justify-center gap-2 mx-auto">
+            <div className="text-8xl font-black tabular-nums tracking-tighter drop-shadow-2xl">{match.game.score.home} - {match.game.score.away}</div>
+            
+            <button onClick={() => setIsMuted(!isMuted)} className="mt-4 text-[10px] uppercase tracking-[0.2em] font-bold opacity-50 hover:opacity-100 transition-opacity flex items-center justify-center gap-2 mx-auto bg-white/5 px-3 py-1 rounded-lg">
               {isMuted ? <IoVolumeMuteOutline size={16}/> : <IoVolumeHighOutline size={16}/>} {isMuted ? 'Sonido Desactivado' : 'Sonido de Estadio'}
             </button>
           </div>
 
           <div className="text-center flex-1">
-            <img src={match.game.away_team.image} className="w-24 h-24 mx-auto drop-shadow-lg" alt="Visitante" />
+            <img src={match.game.away_team.image} className="w-24 h-20 mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]" alt="Visitante" />
             <h2 className="text-2xl font-black mt-4 uppercase tracking-tighter">{match.game.away_team.name}</h2>
           </div>
         </div>
       </div>
+    </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Columna Izquierda: Eventos */}
         <div className="bg-white p-6 rounded-[2rem] shadow-sm border border-gray-100 h-fit">
           <h3 className="font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-2 text-gray-400">
-            <IoTimeOutline className="text-blue-600"/> Cronología
+            <IoTimeOutline className="text-blue-600"/> Cronología del partido
           </h3>
           <div className="space-y-8 border-l-2 border-gray-50 ml-4 pl-6">
             {match.game.events.map((ev, i) => (
@@ -89,7 +135,7 @@ export default function LiveMatchDetailsPage({ matchId }: { matchId: string }) {
           
           {/* Estadísticas de Barras */}
           <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
-            <h3 className="font-black text-sm uppercase tracking-widest mb-10 text-gray-400 text-center">Rendimiento en el campo</h3>
+            <h3 className="font-black text-sm uppercase tracking-widest mb-10 text-gray-400 text-center">Estadísticas</h3>
             <div className="space-y-10">
               <StatBar label="Posesión" home={match.game.stats.possession.home} away={match.game.stats.possession.away} suffix="%" />
               <StatBar label="Remates Totales" home={match.game.stats.shots.home} away={match.game.stats.shots.away} />
@@ -101,7 +147,7 @@ export default function LiveMatchDetailsPage({ matchId }: { matchId: string }) {
           {/* Alineaciones */}
           <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100">
             <h3 className="font-black text-sm uppercase tracking-widest mb-8 flex items-center justify-center gap-2 text-gray-400">
-              <IoPeopleOutline size={20}/> Alineaciones Iniciales
+              <IoPeopleOutline size={20}/> Alineaciones
             </h3>
             <div className="grid grid-cols-2 gap-12">
               <LineupList teamName={match.game.home_team.name} players={match.game.lineups?.home.startXI || []} side="left" />
