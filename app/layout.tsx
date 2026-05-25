@@ -1,6 +1,6 @@
 import './globals.css';
 import Link from 'next/link';
-import { IoCalendarOutline, IoTrophyOutline, IoHomeOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoTrophyOutline, IoHomeOutline, IoShuffleOutline } from "react-icons/io5";
 import type { Metadata } from "next";
 import Script from 'next/script';
 import { Geist, Geist_Mono } from "next/font/google";
@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <NavLink href="/" icon={<IoHomeOutline />} label="Inicio" />
               <NavLink href="/calendar" icon={<IoCalendarOutline />} label="Partidos" />
               <NavLink href="/standings" icon={<IoTrophyOutline />} label="Grupos" />
+              <NavLink href="/bracket" icon={<IoShuffleOutline />} label="Fase Final" />
             </nav>
           </div>
         </header>
