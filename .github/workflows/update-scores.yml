@@ -1,0 +1,13 @@
+name: Update World Cup Scores
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Cada 15 minutos
+  workflow_dispatch: # Permite ejecutarlo a mano
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger API
+        run: |
+          curl "https://fifa-worldcup2026-app.vercel.app/api/cron/update-standings?key=${{ secrets.CRON_SECRET }}"
