@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -7,10 +7,11 @@ const supabase = createClient(
 );
 
 export async function GET(
-  request: Request,
-  { params }: { params: { matchId: string } }
+  request: NextRequest,
+  context: { params: Promise<{ matchId: string }> } 
 ) {
-  const { matchId } = params;
+  // 1. Esperamos a que los params se resuelvan
+  const { matchId } = await context.params;
 
   try {
     // 1. Obtener el api_id de este partido desde tu DB
@@ -68,7 +69,7 @@ export async function GET(
 
     if (error) throw error;
 
-    return NextResponse.json({ game: finalMatch });
+    return NextResponse.json({ game: `Sync completado para ${finalMatch.id}` });
 
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
