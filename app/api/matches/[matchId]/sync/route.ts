@@ -15,20 +15,23 @@ export async function GET(
 
   try {
     // 1. Obtener el api_id de este partido desde tu DB
-    const { data: matchEntry } = await supabase
+    const { data: match } = await supabase
       .from('matches')
       .select('api_id')
       .eq('id', matchId)
       .single();
 
-    if (!matchEntry?.api_id) {
+    if (!match?.api_id) {
       // Si no hay api_id aún, devolvemos lo que hay en DB sin actualizar
-      const { data } = await supabase.from('matches').select('*').eq('id', matchId).single();
+      const { data, error } = await supabase.from('matches').select('*').eq('id', matchId).single();
+      if (error || !data) {
+        return NextResponse.json({ error: 'No encontrado' }, { status: 404 });
+      }
       return NextResponse.json({ game: data });
     }
 
     // 2. Llamada a Football API (Sustituye por tu endpoint real)
-    const res = await fetch(`https://v3.football.api-sports.io/fixtures?id=${matchEntry.api_id}`, {
+    const res = await fetch(`https://v3.football.api-sports.io/fixtures?id=${match.api_id}`, {
       headers: {
         'x-rapidapi-key': process.env.FOOTBALL_API_KEY || '',
         'x-rapidapi-host': 'v3.football.api-sports.io'
@@ -60,7 +63,7 @@ export async function GET(
     };
 
     // 4. Guardar en Supabase (Upsert)
-    const { data: finalMatch, error } = await supabase
+    const { data: updateMatch, error } = await supabase
       .from('matches')
       .update(updatedData)
       .eq('id', matchId)
@@ -69,7 +72,7 @@ export async function GET(
 
     if (error) throw error;
 
-    return NextResponse.json({ game: `Sync completado para ${finalMatch.id}` });
+    return NextResponse.json({ game: updateMatch });
 
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
