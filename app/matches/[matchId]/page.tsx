@@ -1,16 +1,27 @@
 import { createClient } from '@supabase/supabase-js';
-import { NextResponse } from 'next/server';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import LiveMatchDetails from '@/components/LiveMatchDetails';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export async function generateMetadata({ params }: { params: Promise<{ matchId: string }> }): Promise<Metadata> {
   const { matchId } = await params;
-
-  const { data: game, error } = await supabase
+  const { data: game } = await supabase
     .from('matches')
     .select('*')
     .eq('id', matchId)
     .single();
+
+  if (!game) {
+    return {
+      title: 'Partido no encontrado | Mundial 2026',
+      description: 'El partido solicitado no existe o no esta disponible.',
+    };
+  }
 
   return {
     title: `${game.home_team.name} vs ${game.away_team.name} | Mundial 2026`,
@@ -21,40 +32,21 @@ export async function generateMetadata({ params }: { params: Promise<{ matchId: 
   };
 }
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ matchId: string }> }
-) {
-  const { matchId } = await params;
-
-  const { data, error } = await supabase
-    .from('matches')
-    .select('*')
-    .eq('id', matchId)
-    .single();
-
-  if (error || !data) {
-    return NextResponse.json({ error: 'No encontrado' }, { status: 404 });
-  }
-
-  return NextResponse.json(data, {
-    headers: { 'Cache-Control': 'no-store, max-age=0' }
-  });
-}
-
-
 export default async function LiveMatchDetailsPage({ 
   params 
 }: { 
   params: Promise<{ matchId: string }> // Definimos que params es una Promesa
 }) {
-  // Aquí renderizas tu componente de cliente que maneja el "vivo" y los sonidos
   const { matchId } = await params;
+  const { data: game } = await supabase
+    .from('matches')
+    .select('id')
+    .eq('id', matchId)
+    .single();
+
+  if (!game) {
+    notFound();
+  }
 
   return (
     <main>
